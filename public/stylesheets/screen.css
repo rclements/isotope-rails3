@@ -864,6 +864,22 @@ hr {
   float:right;
   font-size:1.2em;
 }
+.edit_user .field.radio input {
+  font-size:1.2em;
+  float:none;
+}
+.edit_user .field.radio_right input {
+  font-size:1.2em;
+  float:none;
+}
+.edit_user .field.radio_right {
+  font-size:1.2em;
+  margin: 0 0 0 180px;
+}
+.edit_user .field.radio_right label{
+  font-size:1.2em;
+  padding: 0 20px 0 0;
+}
 .edit_user textarea {
   float:right;
   font-size:1.2em;

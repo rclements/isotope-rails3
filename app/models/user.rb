@@ -41,5 +41,7 @@ class User < ActiveRecord::Base
   def make_admin!
     self.update_attribute(:admin, true)
   end
+  
+  
 
 end

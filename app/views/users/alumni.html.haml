@@ -1,0 +1,20 @@
+- content_for :title do 
+  About &ndash; Isotope|eleven
+
+#internal-title	
+  %h2.typeface-js
+    About Us
+%p
+  Isotope|eleven surely would never have gotten to our current state without the hard work and dedication of current and former employees. It just feels wrong to pull great people off our site's about page without giving due credit. They've played a large part in our successes so here they stay. Thanks for everything. 
+%h2
+  Meet Our Alums
+- if @alumni
+  - @alumni.each do |alumni|
+    .profile
+      %h3= link_to alumni.name, about_path(alumni)
+      %h5= alumni.position
+      %p= alumni.bio
+    .profile-pic
+      = image_tag alumni.avatar.url
+
+
