@@ -5,6 +5,7 @@
       = yield :title
     = render :partial => 'shared/meta'
     = stylesheet_link_tag 'reset-min', 'screen'
+    = auto_discovery_link_tag :atom, posts_path(:atom)
   %body
     #main-wrap
       #header

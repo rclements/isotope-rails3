@@ -1,6 +1,7 @@
+- content_for(:title, "Blog &ndash; Isotope|eleven".html_safe)
 %h2
   Blog
-  %span#rss_link= link_to (image_tag 'feed-icon-28x28.png'), '/posts.atom'
+  %span#rss_link= link_to (image_tag 'feed-icon-28x28.png'), posts_path(:atom)
 
 = render @posts
 = will_paginate @posts

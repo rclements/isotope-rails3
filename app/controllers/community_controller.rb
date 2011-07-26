@@ -12,4 +12,8 @@ class CommunityController < ApplicationController
     tab :community
   end
 
+  def techbirmingham 
+    tab :community
+  end
+
 end

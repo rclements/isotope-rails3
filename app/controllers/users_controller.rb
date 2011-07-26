@@ -22,12 +22,13 @@ class UsersController < ApplicationController
   def index
     @users = User.unlocked
   end
+  
+  def alumni
+    @alumni = User.find_all_by_alumni(true)
+  end
 
   def show
     @user = User.find_by_slug(params[:id])
-    if @user.locked_at?
-      redirect_to root_url
-    end
     @posts = Post.for_user(@user).paginate :page => params[:page], :order => 'created_at DESC', :per_page => 5
   end
 
@@ -44,8 +45,16 @@ class UsersController < ApplicationController
       elsif params[:user]["locked"] == "false" && @user.locked_at?
         @user.unlock_access!
       end
+      if params[:user]["alumni"] == "true"
+        @user.alumni = true
+        @user.save
+      elsif params[:user]["locked"] == "false"
+        @user.alumni = false
+        @user.save
+      end
     else
-      params[:user]["locked"].delete if params[:user]["locked"]
+      flash[:error] = "You must be admin to do that."
+      #params[:user]["locked"].delete if params[:user]["locked"]
     end
 
     if @user.update_attributes(params[:user])
@@ -56,4 +65,20 @@ class UsersController < ApplicationController
       render :edit
     end
   end
+
+  def change_password
+    @user = User.find_by_slug(params[:id])
+    @user.password = params[:user][:password]
+    @user.password_confirmation = params[:user][:password_confirmation]
+    if @user.save
+      flash[:notice] = "The password was updated sucessfully."
+      redirect_to :action => :show
+    else
+      params[:user][:password] = params[:user][:password_confirmation] = ''
+      flash.now[:error] = "There was a problem updating the password"
+      render :action => :edit
+    end
+  end
+
+
 end

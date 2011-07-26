@@ -26,13 +26,6 @@
       = f.label :bio
       = f.text_area :bio
     .clear  
-    - if @user == current_user || current_user.admin?
-      .field
-        = f.label :password
-        = f.password_field :password
-      .field
-        = f.label :password_confirmation
-        = f.password_field :password_confirmation
     - if @user.created_at?
       .field
         %p Current Avatar:
@@ -41,12 +34,24 @@
         = f.label :avatar
         = f.file_field :avatar
     - if current_user.admin? && @user.created_at?
-      .field
+      .field.radio
+        = f.label :alumni
+      .field.radio_right
+        = f.radio_button(:alumni, :false)
+        = f.label :current
+        = f.radio_button(:alumni, :true)
+        = f.label :alumni
+    - if current_user.admin? && @user.created_at?
+      .field.radio
         = f.label :lock_user
+      .field.radio_right
         = f.radio_button(:locked, :false)
         = f.label :unlocked
         = f.radio_button(:locked, :true)
         = f.label :locked
+    
     .actions
       = f.submit
+  - if @user == current_user || @user.admin?
+    = render :partial => "change_password", :locals => {:user => @user}
 

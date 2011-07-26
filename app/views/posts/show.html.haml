@@ -1,6 +1,7 @@
+- content_for(:title, "#{@post.title} &ndash; Blog &ndash; Isotope|eleven".html_safe)
 = render :partial => @post
 %p
-  = link_to "View All Posts", blogs_path
+  = link_to "View All Posts", posts_path
 - if current_user && (current_user == @post.user || current_user.admin?)
   %p= link_to 'Edit', edit_post_path(@post)
 - if current_user && current_user.admin?

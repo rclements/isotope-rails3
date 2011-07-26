@@ -828,6 +828,14 @@ hr {
   float:right;
 }
 
+.work_examples a {
+  font-size:1.3em;
+}
+
+.work_examples p a {
+  font-size:1em;
+}
+
 
 /*--------------------------------------------blog----------------------------------------------*/
 /*-----------------edit post----------------------*/
@@ -855,6 +863,22 @@ hr {
 .edit_user .field input {
   float:right;
   font-size:1.2em;
+}
+.edit_user .field.radio input {
+  font-size:1.2em;
+  float:none;
+}
+.edit_user .field.radio_right input {
+  font-size:1.2em;
+  float:none;
+}
+.edit_user .field.radio_right {
+  font-size:1.2em;
+  margin: 0 0 0 180px;
+}
+.edit_user .field.radio_right label{
+  font-size:1.2em;
+  padding: 0 20px 0 0;
 }
 .edit_user textarea {
   float:right;
@@ -936,7 +960,7 @@ a.content_link {
   height:94px;
 }
 #footer .footer-content2 {
-  padding: 25px 0 20px 0; 
+  padding: 25px 0 10px 0; 
   margin:0 122px 0 0; 
   float:right; 
   color:#3d606f; 
@@ -955,7 +979,7 @@ a.content_link {
 }
 #footer-content-wrap ul.footer-content {
   float:left; 
-  margin: 0 0 15px 131px; 
+  margin: 0 150px 15px 131px; 
   padding: 25px 0 0 0; 
   color:#3d606f; 
   font-size:1.1em;
@@ -971,6 +995,13 @@ a.content_link {
 #footer .footer-content li a:hover {
   color:#000066;
 }
+
+.footer-content3 {
+  float:right;
+  margin: 5px 124px 0 0;
+}
+
+
 /*-----------------------------------------------mad lib form--------------------------------------------------------------*/
 
 form.contact {
