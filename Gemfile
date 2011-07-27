@@ -9,6 +9,10 @@ gem 'sass', '~> 3.1.1'
 gem 'will_paginate', '~> 3.0.pre2'
 gem 'coderay', '~> 0.9.7'
 
+group :development do
+  gem 'mysql'
+end
+
 group :test do
   gem 'cucumber-rails'
   gem 'capybara'

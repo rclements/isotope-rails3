@@ -84,6 +84,7 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.16)
+    mysql (2.8.1)
     mysql2 (0.2.7)
     nokogiri (1.4.4)
     paperclip (2.3.11)
@@ -156,6 +157,7 @@ DEPENDENCIES
   haml (~> 3.1.1)
   launchy
   machinist
+  mysql
   mysql2 (~> 0.2.7)
   paperclip (~> 2.3.11)
   pickle
