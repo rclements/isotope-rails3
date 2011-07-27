@@ -1,4 +1,5 @@
 source 'http://rubygems.org'
+source "http://gems.github.com"
 
 gem 'bundler', '~> 1.0.2'
 gem 'rails', '~> 3.0.0'
