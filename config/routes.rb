@@ -4,8 +4,13 @@ IsotopeRails3::Application.routes.draw do
   devise_for :users, :path => '/', :path_names => { :sign_in => 'login', :sign_out => 'logout' }
 
   match '/about' => 'users#index', :as => :about_index
+  match '/about/alumni' => 'users#alumni', :as => :about_alumni
   match '/about/:id' => 'users#show', :as => :about
-  resources :users
+  resources :users do
+    member do
+      put :change_password
+    end
+  end
   resources :posts, :path => :blog
   resources :contact
 
